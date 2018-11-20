@@ -7,9 +7,11 @@ module.exports = {
     sourceType: 'module'
   },
   env: {
-    browser: true,
+    browser: false,
+    node: true,
+    es6: true
   },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
+  // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
   // required to lint *.vue files
   plugins: [
@@ -23,5 +25,13 @@ module.exports = {
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+  },
+  globals: {
+    App: true,
+    Page: true,
+    wx: true,
+    getApp: true,
+    getPage: true,
+    requirePlugin: true
   }
 }
